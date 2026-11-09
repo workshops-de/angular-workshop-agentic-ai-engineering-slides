@@ -1,6 +1,10 @@
 {
   "name": "modern-angular",
   "type": "module",
+  "engines": {
+    "node": ">=24",
+    "npm": ">=11"
+  },
   "private": true,
   "scripts": {
     "start": "slidev",
