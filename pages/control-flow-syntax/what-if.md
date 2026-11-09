@@ -163,14 +163,15 @@ this.node.children.length > 0 ); toggle() { this.expanded.update(v => !v); } }
 ```
 
 ---
-layout: default
+layout: two-cols-header
 ---
 
 # What If: Performance Optimization?
 
-<div class="grid grid-cols-2 gap-6">
-  <div>
-    <h3 class="text-lg font-bold mb-3 text-red-600 dark:text-red-400">⚠️ Avoid</h3>
+::left::
+
+### ⚠️ Avoid
+
 ```html
 <!-- Expensive computation in template -->
 @for (item of items; track item.id) {
@@ -179,9 +180,11 @@ layout: default
   }
 }
 ```
-  </div>
-  <div>
-    <h3 class="text-lg font-bold mb-3 text-green-600 dark:text-green-400">✅ Prefer</h3>
+
+::right::
+
+### ✅ Prefer
+
 ```html
 <!-- Pre-computed values -->
 @for (item of processedItems(); track item.id) {
@@ -190,8 +193,14 @@ layout: default
   }
 }
 ```
-  </div>
-</div>
+
+---
+layout: default
+---
+
+# What If: Performance Optimization? (2)
+
+Pre-compute derived state with a `computed` signal instead of calling functions in the template:
 
 ```ts {lineNumbers:true}
 // Use computed signals for derived state
