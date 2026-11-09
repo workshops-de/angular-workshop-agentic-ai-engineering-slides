@@ -49,13 +49,13 @@ layout: default
 @Component({
   template: `
     @switch (componentType) {
-      @case ("chart") {
+      @case ('chart') {
         <app-chart-component [data]="data" />
       }
-      @case ("table") {
+      @case ('table') {
         <app-table-component [data]="data" />
       }
-      @case ("grid") {
+      @case ('grid') {
         <app-grid-component [data]="data" />
       }
       @default {
@@ -65,7 +65,7 @@ layout: default
   `,
 })
 export class DynamicViewComponent {
-  componentType = signal<string>("chart");
+  componentType = signal<string>('chart');
   data = signal<any[]>([]);
 
   switchView(type: string) {
@@ -84,8 +84,7 @@ layout: default
 <!-- Complex nested structure -->
 @for (category of categories(); track category.id) {
 <h2>{{ category.name }}</h2>
-@for (item of category.items; track item.id) { @if (item.isActive && item.price
-> minPrice) {
+@for (item of category.items; track item.id) { @if (item.isActive && item.price > minPrice) {
 <div class="item">{{ item.name }} - ${{ item.price }}</div>
 } } @empty {
 <p>No active items in this category</p>
@@ -114,12 +113,7 @@ layout: default
 ```html {lineNumbers:true,maxHeight:'400px'}
 <!-- Multi-state form field validation -->
 <div class="form-field">
-  <input
-    #emailInput
-    type="email"
-    [(ngModel)]="email"
-    (blur)="validateEmail()"
-  />
+  <input #emailInput type="email" [(ngModel)]="email" (blur)="validateEmail()" />
 
   @if (emailInput.touched) { @if (!email()) {
   <span class="error">Email is required</span>
@@ -157,9 +151,9 @@ layout: default
   </div>
   }
 </div>
-` }) export class TreeNodeComponent { @Input() node!: TreeNode; expanded =
-signal(false); hasChildren = computed(() => this.node.children &&
-this.node.children.length > 0 ); toggle() { this.expanded.update(v => !v); } }
+` }) export class TreeNodeComponent { @Input() node!: TreeNode; expanded = signal(false);
+hasChildren = computed(() => this.node.children && this.node.children.length > 0 ); toggle() {
+this.expanded.update(v => !v); } }
 ```
 
 ---
@@ -199,7 +193,7 @@ processedItems = computed(() =>
   this.items().map((item) => ({
     ...item,
     meetsThreshold: this.complexCalculation(item) > this.threshold(),
-  })),
+  }))
 );
 ```
 

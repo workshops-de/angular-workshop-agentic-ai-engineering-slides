@@ -59,11 +59,7 @@ layout: default
 
 <!-- After: Using @if -->
 @if (book.cover) {
-<img
-  [src]="book.cover"
-  [alt]="book.title"
-  class="w-full h-full object-contain bg-gray-100"
-/>
+<img [src]="book.cover" [alt]="book.title" class="w-full h-full object-contain bg-gray-100" />
 }
 ```
 
@@ -75,10 +71,7 @@ layout: default
 
 ```html
 <!-- Before: Negated *ngIf -->
-<div
-  *ngIf="!book.cover"
-  class="w-full h-full bg-gray-100 flex items-center justify-center"
->
+<div *ngIf="!book.cover" class="w-full h-full bg-gray-100 flex items-center justify-center">
   <span class="text-gray-500 text-sm font-medium">No cover available</span>
 </div>
 
@@ -104,8 +97,7 @@ layout: default
 
 ```html
 <!-- Before: *ngFor with trackBy function -->
-<app-book-item *ngFor="let book of books; trackBy: trackById" [book]="book">
-</app-book-item>
+<app-book-item *ngFor="let book of books; trackBy: trackById" [book]="book"> </app-book-item>
 
 <!-- After: @for with inline track -->
 @for (book of books; track book.id) {
@@ -171,10 +163,7 @@ layout: default
 <div *ngIf="filteredBooks.length === 0" class="col-span-full">
   <!-- empty state content -->
 </div>
-<app-book-item
-  *ngFor="let book of filteredBooks; trackBy: trackById"
-  [book]="book"
-></app-book-item>
+<app-book-item *ngFor="let book of filteredBooks; trackBy: trackById" [book]="book"></app-book-item>
 
 <!-- After: Built-in @empty -->
 @for (book of filteredBooks; track book.id) {
