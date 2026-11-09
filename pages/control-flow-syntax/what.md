@@ -188,8 +188,8 @@ layout: two-cols
 ```html
 @for (item of items; track item.id) {
 <div>
-  Index: {{ $index }} First: {{ $first }} Last: {{ $last }} Even: {{ $even }} Odd: {{ $odd }} Count:
-  {{ $count }}
+  Index: {{ $index }} First: {{ $first }} Last: {{ $last }} Even: {{ $even }}
+  Odd: {{ $odd }} Count: {{ $count }}
 </div>
 }
 ```

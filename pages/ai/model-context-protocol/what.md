@@ -130,13 +130,13 @@ layout: default
 ```typescript
 // Server registers tools
 server.registerTool(
-  'generate_component',
+  "generate_component",
   {
     // Tool definition
   },
   async (params) => {
     // Tool implementation
-  }
+  },
 );
 ```
 
@@ -155,8 +155,8 @@ _AI Assistant (Cursor, Copilot)_
 
 ```typescript
 // Client uses tools
-const result = await mcpClient.callTool('generate_component', {
-  name: 'user-profile',
+const result = await mcpClient.callTool("generate_component", {
+  name: "user-profile",
 });
 ```
 
@@ -177,8 +177,8 @@ layout: default
 ### **Core Classes**
 
 ```typescript
-import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
-import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
+import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
+import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 ```
 
 ### **Key Features**
